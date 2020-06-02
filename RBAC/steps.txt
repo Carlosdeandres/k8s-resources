@@ -2,8 +2,8 @@
 minikube start --vm-driver=none  --extra-config=apiserver.authorization-mode=RBAC
 
 ## Create keys and sign
-openssl genrsa -out ricardo.key 2048
-openssl req -new -key ricardo.key -out ricardo.csr -subj "/CN=ricardo/O=dev"
+openssl genrsa -out carlos.key 2048
+openssl req -new -key ricardo.key -out carlos.csr -subj "/CN=carlos/O=dev"
 sudo openssl x509 -req -in ricardo.csr -CA /root/.minikube/ca.crt -CAkey /root/.minikube/ca.key -CAcreateserial -out ricardo.crt -days 500
 openssl x509 -in  ricardo.crt  -noout -text
 
